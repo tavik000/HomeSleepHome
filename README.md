@@ -57,13 +57,16 @@ Pending...
 
 ## Credit
 
-Zhao, Haiqi  <img src="https://github.com/favicon.ico" width="24">[Key](https://github.com/tavik000) : Programming (GGJ User: tavik000)
+Zhao, Haiqi: Programming (GGJ User: tavik000)
+-  <img src="https://github.com/favicon.ico" width="24">[Key](https://github.com/tavik000) 
 
 Denis Huen: Game Design (GGJ User: denishuen)
 
 Chen Qi: Programming (GGJ User: Peter Chen)
+- <img src="https://github.com/favicon.ico" width="24">[Karl So](https://github.com/KarlSoHelloworld) <br>
 
 Su Gengmin: Programming  (GGJ User: Karl So)
+- <img src="https://github.com/favicon.ico" width="24">[Chen Qi](https://github.com/Cqyhid) <br>
 
 SIT, Man Kong: Game Design, SFX, Video Editor (GGJ User: sitmankong)
 
