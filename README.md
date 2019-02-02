@@ -76,7 +76,7 @@ Ho Wai Lok: Art & Game Design (GGJ User: goldenbird)
 
 Gameplay <br>
 ![image](./ScreenShot/scr00.png) <br>
-![image](./ScreenShot/scr01.png) <br>
+![image](./ScreenShot/scr01.jpg) <br>
 ![image](./ScreenShot/scr02.png) <br>
 ![image](./ScreenShot/scr03.png) <br>
 
