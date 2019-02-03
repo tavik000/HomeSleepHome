@@ -112,14 +112,23 @@ public class ValueControl : MonoBehaviour
             }
         }
     }
+
     // GameStart
     public void GameStart()
     {
 
         momCallEnable = false;
         momCallDeductionEnable = false;
+
+        bodyDamaging = false;
+        footDamaging = false;
         earDamageEffect1.gameObject.active = false;
         earDamageEffect2.gameObject.active = false;
+        bodyDamageEffect1.gameObject.active = false;
+        bodyDamageEffect2.gameObject.active = false;
+        footDamageEffect1.gameObject.active = false;
+        footDamageEffect2.gameObject.active = false;
+
         isCoverEar = false;
         comfortValue = 100f;
         comfortBar.value = comfortValue;
