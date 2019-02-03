@@ -33,13 +33,93 @@ public class ValueControl : MonoBehaviour
     public Text gameStatus;
 
 
+    public Image footDamageEffect1;
+    public Image footDamageEffect2;
+    public Image bodyDamageEffect1;
+    public Image bodyDamageEffect2;
+    public Image earDamageEffect1;
+    public Image earDamageEffect2;
 
+    private bool bodyDamaging = false;
+    private bool footDamaging = false;
+
+    private float timerEffect = 0.25f;
+    private float earTimerEffect = 0.05f;
+
+
+    private void Update()
+    {
+        if (!gameOver)
+        {
+            if (footDamaging)
+            {
+                timerEffect -= Time.deltaTime;
+                
+                if (timerEffect <= 0)
+                {
+                    if (footDamageEffect1.gameObject.active)
+                    {
+                        footDamageEffect1.gameObject.active = false;
+                        footDamageEffect2.gameObject.active = true;
+                    }
+                    else
+                    {
+                        footDamageEffect1.gameObject.active = true;
+                        footDamageEffect2.gameObject.active = false;
+                    }
+                    timerEffect = 0.25f;
+                }
+            }
+
+            if (bodyDamaging)
+            {
+                timerEffect -= Time.deltaTime;
+
+                if (timerEffect <= 0)
+                {
+                    if (bodyDamageEffect1.gameObject.active)
+                    {
+                        bodyDamageEffect1.gameObject.active = false;
+                        bodyDamageEffect2.gameObject.active = true;
+                    }
+                    else
+                    {
+                        bodyDamageEffect1.gameObject.active = true;
+                        bodyDamageEffect2.gameObject.active = false;
+                    }
+                    timerEffect = 0.25f;
+                }
+            }
+
+            if (momCallDeductionEnable)
+            {
+                earTimerEffect -= Time.deltaTime;
+
+                if (earTimerEffect <= 0)
+                {
+                    if (earDamageEffect1.gameObject.active)
+                    {
+                        earDamageEffect1.gameObject.active = false;
+                        earDamageEffect2.gameObject.active = true;
+                    }
+                    else
+                    {
+                        earDamageEffect1.gameObject.active = true;
+                        earDamageEffect2.gameObject.active = false;
+                    }
+                    earTimerEffect = 0.05f;
+                }
+            }
+        }
+    }
     // GameStart
     public void GameStart()
     {
 
         momCallEnable = false;
         momCallDeductionEnable = false;
+        earDamageEffect1.gameObject.active = false;
+        earDamageEffect2.gameObject.active = false;
         isCoverEar = false;
         comfortValue = 100f;
         comfortBar.value = comfortValue;
@@ -71,6 +151,8 @@ public class ValueControl : MonoBehaviour
                     changeRate -= 6;
                     print("-6 => now: " + changeRate + " with object " + collision.gameObject.name + " at line 69");
                     momCallDeductionEnable = false;
+                    earDamageEffect1.gameObject.active = false;
+                    earDamageEffect2.gameObject.active = false;
                 }
             }
 
@@ -80,6 +162,21 @@ public class ValueControl : MonoBehaviour
                 changeRate -= 1;
                 print("-1 => now: " + changeRate + " with object " + collision.gameObject.name + " at line 78");
 
+                // Zone1 is the body zone
+                if (collision.gameObject.name == "Zone1")
+                {
+                    bodyDamaging = false;
+                    bodyDamageEffect1.gameObject.active = false;
+                    bodyDamageEffect2.gameObject.active = false;
+                }
+
+                // Zone9 is the foot zone
+                if (collision.gameObject.name == "Zone9")
+                {
+                    footDamaging = false;
+                    footDamageEffect1.gameObject.active = false;
+                    footDamageEffect2.gameObject.active = false;
+                }
             }
         }
 
@@ -94,6 +191,17 @@ public class ValueControl : MonoBehaviour
                 changeRate += 1;
                 print("+1 => now: " + changeRate + " with object " + collision.gameObject.name + " at line 88");
 
+                // Zone1 is the body zone
+                if (collision.gameObject.name == "Zone1")
+                {
+                    bodyDamaging = true;
+                }
+
+                // Zone9 is the foot zone
+                if (collision.gameObject.name == "Zone9")
+                {
+                    footDamaging = true;
+                }
             }
 
 
@@ -139,6 +247,8 @@ public class ValueControl : MonoBehaviour
         if (momCallDeductionEnable)
         {
             momCallDeductionEnable = false;
+            earDamageEffect1.gameObject.active = false;
+            earDamageEffect2.gameObject.active = false;
             changeRate -= 6;
             print("-6 => now: " + changeRate + " at line 135");
         }
