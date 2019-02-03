@@ -1,6 +1,6 @@
 <p align="center">
   <h1 align="center">Home Sleep Home</h1>
-  <p align="center">PC of an Unity Project</p>
+  <p align="center">An Unity Project of PC Mini Game</p>
 </p> 
 
 
