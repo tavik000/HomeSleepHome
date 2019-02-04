@@ -41,7 +41,7 @@ The quilt is sliding down all the time. Press space to hold the quilt up a littl
 
 
 ## Release
-- [Release Page](https://github.com/tavik000/HomeSleepHome/releases/tag/v1.0.3)
+- [Release Page](https://github.com/tavik000/HomeSleepHome/releases)
 
 
 ## Environment
